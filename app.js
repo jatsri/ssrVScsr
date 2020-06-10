@@ -2,6 +2,8 @@ import express from 'express'
 import path from 'path'
 
 import template from './template';
+import renderOnServer from './renderOnServer';
+import data from './assets/data'
 
 const app = express();
 
@@ -13,7 +15,12 @@ app.listen(process.env.PORT || 3000);
 
 // server rendered home page
 app.get('/server', (req, res) => {
-    const response = template("Rendered on the server", {}, "Hello World");
+    let initialState = {
+        isFetching: false,
+        apps: data
+    };
+    const { content, preloadedState } = renderOnServer(initialState);
+    const response = template("Rendered on the server", preloadedState, content);
     res.setHeader('Cache-Control', 'assets, max-age=604800');
     res.send(response);
 });
