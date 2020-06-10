@@ -11,7 +11,9 @@ const app = express();
 app.use('/assets', express.static(path.resolve(__dirname, 'assets')));
 
 // start the server
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server is listening on ${process.env.PORT || 3000 }`);
+});
 
 // server rendered home page
 app.get('/server', (req, res) => {
