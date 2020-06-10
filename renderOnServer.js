@@ -3,6 +3,7 @@ import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 
 import createStore from './redux/store';
+import App from './components/App';
 
 
 module.exports = function render(initialState) {
@@ -11,7 +12,7 @@ module.exports = function render(initialState) {
 
     let content = renderToString(
         <Provider store={store} >
-            <div> Hello World </div>
+            <App/>
         </Provider>
     );
 
