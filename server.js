@@ -29,6 +29,7 @@ app.get('/server', (req, res) => {
 
 // Pure client side rendered page
 app.get('/client', (req, res) => {
+    const response = template("Will be rendered on the client");
     res.setHeader('Cache-Control', 'assets, max-age=604800');
-    res.send('Rendered on the client')
+    res.send(response)
 });
