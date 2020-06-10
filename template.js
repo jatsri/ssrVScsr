@@ -1,7 +1,6 @@
 export default function template(title, initialState = {}, content = "") {
-    const scripts = ` <script>
-                   window.__STATE__ = ${JSON.stringify(initialState)}
-                </script>`;
+    const scripts = ` <script>window.__STATE__ = ${JSON.stringify(initialState)}</script>
+                      <script src="dist/client.js">`;
 
     return `<!DOCTYPE html>
               <html lang="en">
@@ -16,8 +15,7 @@ export default function template(title, initialState = {}, content = "") {
                       ${content}
                    </div>
                 </div>
-
-                  ${scripts}
               </body>
+               ${scripts}
               `;
 }

@@ -4,7 +4,8 @@
   "description": "A react-redux app with server side and client side rendering.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "build": "webpack --config webpack.config.js",
+    "start": "npm run-script build && node index.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,8 @@
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   }
 }
