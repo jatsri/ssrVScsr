@@ -9,6 +9,7 @@ const app = express();
 
 // Serving static files
 app.use('/assets', express.static(path.resolve(__dirname, 'assets')));
+app.use('/dist', express.static(path.resolve(__dirname, 'dist')));
 
 // start the server
 app.listen(process.env.PORT || 3000, () => {
