@@ -4,7 +4,7 @@ module.exports = {
     mode: 'development',
     entry: {
         stateInjectedClient: './stateInjectedClient.js',
-        client: './client.js'
+        statelessClient: './client.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

@@ -1,12 +1,12 @@
 export default function template(title, initialState = {}, content = "") {
-    let scripts;
+    let scripts = '';
 
     if (content) {
         scripts = `<script>window.__STATE__ = ${JSON.stringify(initialState)}</script>
-                   <script src="dist/stateInjectedClient.js">`;
+                   <script src="dist/stateInjectedClient.js.js">`;
+    } else {
+        scripts = `<script src="dist/statelessClient.js"></script>`
     }
-
-    scripts = `<script src="dist/client.js">`;
 
     return `<!DOCTYPE html>
               <html lang="en">
