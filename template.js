@@ -1,9 +1,9 @@
 export default function template(title, initialState = {}, content = "") {
-    let scripts = '';
+    let scripts;
 
     if (content) {
         scripts = `<script>window.__STATE__ = ${JSON.stringify(initialState)}</script>
-                   <script src="dist/stateInjectedClient.js.js">`;
+                   <script src="dist/stateInjectedClient.js">`;
     } else {
         scripts = `<script src="dist/statelessClient.js"></script>`
     }
